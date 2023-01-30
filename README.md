@@ -1,13 +1,17 @@
 # java-decorator
 Decorator Pattern
 
-## Person Class & Builder
+## Device Class & Decorator
 ```mermaid
 classDiagram
      Device <|-- Laptop
+     Device <|-- DeviceDecorator
      Device : #components
      Device : +assemble()
      class Laptop {
+         +assemble()
+     }
+     class DeviceDecorator {
          +assemble()
      }
 ```
