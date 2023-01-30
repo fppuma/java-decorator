@@ -4,10 +4,10 @@ Decorator Pattern
 ## Person Class & Builder
 ```mermaid
 classDiagram
-     Laptop <|-- Device
-     Laptop : +assemble()
-     class Device {
-         -List components
+     Device <|-- Laptop
+     Device : #components
+     Device : +assemble()
+     class Laptop {
          +assemble()
      }
 ```
