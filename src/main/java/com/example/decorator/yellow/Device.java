@@ -1,5 +1,8 @@
 package com.example.decorator.yellow;
 
-public interface Device {
-    void assemble();
+import java.util.List;
+
+public abstract class Device {
+    protected List<String> components;
+    public abstract void assemble();
 }
