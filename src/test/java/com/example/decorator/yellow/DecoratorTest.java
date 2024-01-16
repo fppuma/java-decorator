@@ -1,5 +1,9 @@
 package com.example.decorator.yellow;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +17,8 @@ public class DecoratorTest {
     Device laptop = new Laptop();
     laptop.assemble();
     logger.info("laptop: {}", laptop.components);
+    List<String> expected = List.of("CPU", "MEMORY");
+    assertEquals(expected, laptop.components);
   }
 
   @Test
@@ -20,6 +26,8 @@ public class DecoratorTest {
     Device laptopZoom = new WebCamDecorator(new Laptop());
     laptopZoom.assemble();
     logger.info("laptopZoom: {}", laptopZoom.components);
+    List<String> expected = List.of("CPU", "MEMORY", "WEB_CAM");
+    assertEquals(expected, laptopZoom.components);
   }
 
   @Test
@@ -27,6 +35,9 @@ public class DecoratorTest {
     Device laptopMusic = new BluRayDecorator(new Laptop());
     laptopMusic.assemble();
     logger.info("laptopMusic: {}", laptopMusic.components);
+    List<String> expected = List.of("CPU", "MEMORY", "BLU_RAY");
+    assertEquals(expected, laptopMusic.components);
+    
   }
 
   @Test
@@ -34,6 +45,8 @@ public class DecoratorTest {
     Device laptopZoomMusic = new BluRayDecorator(new WebCamDecorator(new Laptop()));
     laptopZoomMusic.assemble();
     logger.info("laptopMusic: {}", laptopZoomMusic.components);
+    List<String> expected = List.of("CPU", "MEMORY", "WEB_CAM", "BLU_RAY");
+    assertEquals(expected, laptopZoomMusic.components);
   }
 
 }
