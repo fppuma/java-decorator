@@ -24,3 +24,7 @@ classDiagram
     +assemble()
   }
 ```
+
+## Tests
+See test to have more details of this patterns.
+[Here](src/test/java/com/example/decorator/yellow/DecoratorTest.java)
